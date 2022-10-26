@@ -1,0 +1,54 @@
+---
+layout: post
+title: Another test markdown
+subtitle: Each post also has a subtitle
+categories: markdown
+tags: [test]
+---
+
+## 주요 학습 내용 : 객체의 동적 생성 및 반환
+- 객체 배열의 동적 생성 및 반환
+ EX) Circle *pArray = new Circle[3]; -> 객체 배열의 동적 생성
+delete [] pArray; -> 객체 배열 반환
+
+- 객체 포인터 배열
+<pre>
+<code>
+#include <iostream>
+using namespace std;
+
+class Person {
+    string name, tel;
+    public : 
+        Person(string n, string t) : name(n), tel(t) {};
+        ~Person() { cout << "객체 소멸" << endl; }
+        void disPlay() const { cout << "name = " << name << ", tel = " << tel << endl; }
+};
+
+int main() {
+    Person *per[3];
+    string name, tel;
+
+    int size = sizeof(per) / sizeof(per[0]); // 3개의 객체 주소를 저장할 수 있는 객체 포인터 배열
+    for(int i = 0; i < size; i++) {
+        cout << ">> name, tel : ";
+        cin >> name;
+        cin >> tel;
+        per[i] = new Person(name, tel);
+    }
+    for(int i = 0; i < size; i++) {
+        per[i] -> disPlay(); // == (*(per + i)) -> disPlay();
+    }
+    for(int i = 0; i < size; i++) {
+        delete per[i]; // n번 객체 생성, n번 객체 소멸
+    }
+}
+</pre>
+</code>
+
+학습 평가 :
+객체 배열과 객체 포인터 배열의 차이점을 확실하게 알지 못했는데, 객체 배열의 접근은
+(pArray + i) -> getArea(); 로 접근하고, 객체 포인터 배열은 per[i] -> disPlay(); 로 접근한다.
+이것을 통해 객체 배열은 객체 자체를 저장하기 때문에 배열 값에 바로 접근해서 함수를 호출할 
+수 있는 것이고, 객체 포인터 배열은 각 객체의 포인터 주소를 가지고 있기 때문에 값에
+접근한 뒤 -> 연산자를 통해 한 번 더 접근을 해서 함수를 호출해야 한다.
