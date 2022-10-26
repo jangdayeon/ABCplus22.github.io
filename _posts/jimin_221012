@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Another test markdown
-subtitle: Each post also has a subtitle
+title: 지민
+subtitle:
 categories: markdown
-tags: [test]
+tags: #all
 ---
 
 ## 주요 학습 내용 : 객체의 동적 생성 및 반환
