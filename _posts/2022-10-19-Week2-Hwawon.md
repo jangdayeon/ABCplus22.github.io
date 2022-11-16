@@ -2,7 +2,7 @@
 layout: post
 title: 화원
 subtitle:
-categories: hawwon
+categories: Hwawon
 tags: #all
 ---
 ##  두번째 활동 일지
