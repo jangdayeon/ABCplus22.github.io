@@ -32,7 +32,7 @@ int main()
     }
 }
 ```
-##2번
+## 2번
 ```C++
 #include <iostream>
 #include <string>
@@ -62,7 +62,7 @@ int main()
     cout << "change: " << changeExt(str) << endl;
 }
 ```
-##3번
+## 3번
 ```C++
 #include <iostream>
 #include <string>
@@ -90,7 +90,7 @@ int main()
     }
 }
 ```
-##4번
+## 4번
 ```C++
 #include <iostream>
 #include <memory>
@@ -137,7 +137,7 @@ int main()
     }
 }
 ```
-##5번
+## 5번
 ```C++
 #include <iostream>
 #include <string>
