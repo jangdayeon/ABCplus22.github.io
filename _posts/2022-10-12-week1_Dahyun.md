@@ -3,7 +3,7 @@ layout: post
 title: 1주차 활동일지_박다현
 subtitle:
 categories: Dahyun
-tags: #
+tags: #Dahyun
 ---
 ## 첫 번째 활동 일지
 **일시 :** 2022.10.12 16:00~18:00  
