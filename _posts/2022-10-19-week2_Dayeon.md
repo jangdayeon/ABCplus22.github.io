@@ -47,7 +47,7 @@ C++는 방대한 양의 C 라이브러리 함수를 사용할 수 있다. 라이
 
 ### 연습 문제 오답노트
  - 3번. " using namespace std; "는 std 이름공간에 정의되어 있는 이름들을 프로그램이 사용할 수 있도록 허용해준다.
- - 11. main() 함수가 cout << " please "; 명령어를 실행 했을 때 컴파일러가 cout가 unknown identifier라고 에러 메시지를 출력하는 원인은 cout를 컴파일러가 식별하지 못해서 이고, #include <iostream> using namespace std;를 선언하여 해결한다.
+ - 11번. main() 함수가 cout << " please "; 명령어를 실행 했을 때 컴파일러가 cout가 unknown identifier라고 에러 메시지를 출력하는 원인은 cout를 컴파일러가 식별하지 못해서 이고, #include <iostream> using namespace std;를 선언하여 해결한다.
 
 ### 프로그래밍 연습 문제 오답노트
   <script src="https://gist.github.com/ABCplus22/293304fe63601e5e9ab1a9ef85ab0c35.js"></script>
