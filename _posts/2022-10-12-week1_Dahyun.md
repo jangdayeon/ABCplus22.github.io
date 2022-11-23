@@ -2,7 +2,7 @@
 layout: post
 title: 1주차 활동일지_박다현
 subtitle:
-categories: Dahyun
+categories: Week_01
 tags: #Dahyun
 ---
 ## 첫 번째 활동 일지
