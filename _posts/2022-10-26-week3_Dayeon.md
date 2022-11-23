@@ -2,11 +2,11 @@
 layout: post
 title: 3주차 활동일지_장다연
 subtitle:
-categories: Dayeon
+categories: Week_03
 tags: #Dayeon
 ---
 ## 세 번째 활동 일지
-**일시 :** 2022.10.26 16:00~18:00  
+**일시 :** 2022.10.26 16:00~18:30  
 **작성자 :** 빅데이터전공 20215230 장다연  
 **학습 목표 :** 'Chapter2. C++ 시작하기' 문제 풀기 
 
