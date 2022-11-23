@@ -2,11 +2,11 @@
 layout: post
 title: 4주차 활동일지_박다현
 subtitle:
-categories: Dahyun
+categories: Week_04
 tags: #Dahyun
 ---
 ## 네 번째 활동 일지
-**일시 :** 2022.11.02 16:00~18:00  
+**일시 :** 2022.11.02 16:00~18:30  
 **작성자 :** 콘텐츠IT전공 20205166 박다현  
 **학습 목표 :** 상속    
 
