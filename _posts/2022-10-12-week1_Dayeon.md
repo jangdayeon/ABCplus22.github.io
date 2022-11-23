@@ -2,7 +2,7 @@
 layout: post
 title: 1주차 활동일지_장다연
 subtitle:
-categories: Dayeon
+categories: Week_01
 tags: #Dayeon
 ---
 ## 첫 번째 활동 일지
