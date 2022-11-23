@@ -2,7 +2,7 @@
 layout: post
 title: 2주차 실습코드_박다현
 subtitle:
-categories: Dahyun
+categories: Week_01
 tags: #Dahyun
 ---
 ## 1번
