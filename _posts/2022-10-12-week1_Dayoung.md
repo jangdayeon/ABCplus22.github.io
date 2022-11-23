@@ -2,7 +2,7 @@
 layout: post
 title: 1주차 활동일지_정다영
 subtitle: 
-categories: Dayoung
+categories: Week_01
 tags: #Dayoung
 ---
 ## 첫 번째 활동 일지
