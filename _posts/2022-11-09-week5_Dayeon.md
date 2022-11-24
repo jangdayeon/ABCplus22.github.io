@@ -46,7 +46,7 @@ tags: #Dayeon
 7. static 활용
  - 전역 변수나 전역 함수를 클래스에 캡술화하고, 객체 사이에 공유 변수를 만들고자 할 때 활용한다.
 
-###실습 문제 풀이
+### 실습 문제 풀이
 <script src="https://gist.github.com/ABCplus22/89af5d6ce669aa4a902c91bb7a9ffde5.js"></script>
 
 
