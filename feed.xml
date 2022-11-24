@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="/jekyll-theme-yat/feed.xml" rel="self" type="application/atom+xml" /><link href="/jekyll-theme-yat/" rel="alternate" type="text/html" /><updated>2022-11-24T10:55:50+00:00</updated><id>/jekyll-theme-yat/feed.xml</id><title type="html">ABCplus Study Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>GitHub User</name></author><entry><title type="html">7주차 활동일지_이화원</title><link href="/jekyll-theme-yat/week_plus/2022/11/23/Week07-Hwawon.html" rel="alternate" type="text/html" title="7주차 활동일지_이화원" /><published>2022-11-23T00:00:00+00:00</published><updated>2022-11-23T00:00:00+00:00</updated><id>/jekyll-theme-yat/week_plus/2022/11/23/Week07-Hwawon</id><content type="html" xml:base="/jekyll-theme-yat/week_plus/2022/11/23/Week07-Hwawon.html"><![CDATA[<h2 id="일곱-번째-활동-일지">일곱 번째 활동 일지</h2>
+<p><strong>일시 :</strong> 2022.11.23 16:00~18:30<br />
+<strong>작성자 :</strong> 콘텐츠IT전공 20215772 이화원<br />
+<strong>학습 목표 :</strong> 상속</p>
+
+<p><strong>주요학습내용</strong></p>
+
+<p>-상속 개념
+-클래스상속과 객체</p>
+<ul>
+  <li>접근 지정자
+-업 캐스팅, 다운 캐스팅
+-상속과 생성자, 소멸자
+-다중 상속
+-가상 상속</li>
+</ul>
+
+<p><strong>오늘의 학습 계획</strong></p>
+<ol>
+  <li>cpp_09_상속 pdf와 강의 영상을 보며 공부</li>
+  <li>13주차 실습 문제 코딩</li>
+  <li>학습 평가
+    <h3 id="요약-정리">요약 정리</h3>
+    <p>상속이란 객체가 생성될 때 자신의 멤버 뿐만 아니라 부모 클래스의 멤버를 포함할 것을 지시하고 기본클래스의 속성과 기능을 파생 클래스에 물려 주는 것을 이야기 합니다.c++에서는 여러개의 클래스를 동시에 상속 받는 다중 상속을 허용합니다. 기본 클래스의 기능을 물려 받아 파생 클래스를 간결하게 작성하는 장점이 이 외에도 클래스 간의 계층적 분류 및 관리가 용이하다는 것과 클래스 재사용과 확장을 통하여 생산성을 향상 시킬 수 있다는 장점이 있습니다. 업 캐스팅이란 파생 클래스의 포인터가 기본 클래스의 포인터에 치환되는 것을 이야기합니다. 다운 캐스팅이란 기본클래스의 포인터가 파생 클래스의 포인터에 치환되는 것을 이야기합니다. 접근 지정자에는 private멤버, public멤버, protected멤버가 있습니다. 생성자 실행 순서는 기본 클래스의 생성자가 가장 먼저 실행이 되고 그다음에 기본클래스를 상속한 클래스가 실행이됩니다. 마지막으로 기본클래스를 상속한 파생클래스를 상속한 틀래스가 있으면 그 클래스가 생성이 됩니다. 소멸자는 이와 반대로 생성이 가장 나중에 된 파생클래스부터 생성된 역순으로 클래스가 실행이 됩니다.다중 상속은 파생클래스가 한번에 2개 이상의 기본 클래스를 상속 받는 것을 이야기합니다.가상 상속이란 기본클래스를 상속받은 두 파생 클래스를 한 클래스에서 다중 상속 받을 시에 발생하는 기본 클래스의 멤버 중복을 방지하기 위하여 파생클래스 선언문에서 기본 클래스 앞에 virtual로 선언 하는 것을 이야기합니다.</p>
+  </li>
+</ol>
+
+<h3 id="학습-평가">학습 평가</h3>
+<p>기억해야 할 예시, 새로배운 내용
+-상속의 선언
+	-class student:public person{
+		//person을 상속 받는 student 클래스 선언
+		//기본 클래스명 : Person
+		//파생 클래스명: Student
+		//public이외에도 접근 지정자 private와 protected도 지정 가능
+	  };
+-상속 지정
+	-public : 기본 클래스의 protected, public 멤버 속성을 그대로 계승합니다.
+	-protected : 기본 클래스의 protected, public 멤버 속성을 protected로 계승합니다.
+	-private : 기본 클래스의 protected, public 멤버 속성을 private으로 계승합니다.
+-업캐스팅, 다운 캐스팅 예시
+	int main() {
+		ColorPoint cp;
+		ColorPoint <em>pDer;
+		Point</em> pBase = &amp;cp; // 업캐스팅
+		pBase-&gt;set(3,4); 
+		pBase-&gt;showPoint(); 
+		pDer = (ColorPoint *)pBase; // 다운캐스팅/ 강제 타입변화가 반드시 필요합니다.
+}
+-다중 상속 선언
+	-class MP3{
+	};
+	 class MobilePhone{
+	};
+	 class MusicPhone : public MP3, public MobilePhone{
+	};
+-가상 상속
+	-class In : virtual public BaseIO {
+							//In 클래스는 BaseIO 클래스를 가상 상속하는 예시 입니다.
+	  };</p>]]></content><author><name>GitHub User</name></author><category term="Week_plus" /><summary type="html"><![CDATA[일곱 번째 활동 일지 일시 : 2022.11.23 16:00~18:30 작성자 : 콘텐츠IT전공 20215772 이화원 학습 목표 : 상속]]></summary></entry><entry><title type="html">7주차 활동일지_장다연</title><link href="/jekyll-theme-yat/week_plus/2022/11/23/week7_Dayeon.html" rel="alternate" type="text/html" title="7주차 활동일지_장다연" /><published>2022-11-23T00:00:00+00:00</published><updated>2022-11-23T00:00:00+00:00</updated><id>/jekyll-theme-yat/week_plus/2022/11/23/week7_Dayeon</id><content type="html" xml:base="/jekyll-theme-yat/week_plus/2022/11/23/week7_Dayeon.html"><![CDATA[<h2 id="일곱-번째-활동-일지">일곱 번째 활동 일지</h2>
+<p><strong>일시 :</strong> 2022.11.23 16:00~18:30<br />
+<strong>작성자 :</strong> 빅데이터전공 20215230 장다연<br />
+<strong>학습 목표 :</strong> ‘상속’ 공부</p>
+
+<p><strong>주요학습내용</strong></p>
+<ul>
+  <li>상속 개념을 이해하고 문제 해결에 활용할 수 있다.</li>
+  <li>상속이 적용된 클래스의 객체 생성과 객체 포인터를 이해할 수 있다.</li>
+  <li>여러가지 상속 방법을 이해한다.</li>
+  <li>다중 상속과 가상 상속을 이해한다.</li>
+  <li>상속을 활용한 코드 재사용을 프로그램에 구현할 수 있다.</li>
+  <li>상속을 활용한 객체 생성과 접근을 이해할 수 있다.</li>
+</ul>
+
+<p><strong>오늘의 학습 계획</strong></p>
+<ol>
+  <li>‘C++ 프로그래밍-양은샘 교수님’ 수업 정리</li>
+  <li>학습 평가</li>
+</ol>
+
+<h3 id="요약-정리">요약 정리</h3>
+<ol>
+  <li>상속 개념
+    <ul>
+      <li>기본 클래스와 파생 클래스로 나뉜다. 다중 상속을 허용한다.</li>
+      <li>접근 제한자와 베이스 클래스의 이름을 붙여서 만든다.</li>
+      <li>상속 의 장점은 1. 간결하게 클래스를 작성할 수 있고, 2. 클래스 간의 계층적 분류 및 관리가 용이하고, 3. 클래스 재사용과 확장을 통한 소프트웨어 생산성을 향상시킬 수 있다는 장점을 가진다.</li>
+      <li>상속의 선언 ex. class Student : public Person {};</li>
+    </ul>
+  </li>
+  <li>클래스상속과 객체</li>
+  <li>상속과 객체 포인터
+    <ul>
+      <li>업 캐스팅(up-casting) : 파생 클래스의 포인터가 기본 클래스의 포인터에 치환되는 것 (ex. Point* pBase = pDer;)</li>
+      <li>다운 캐스팅(down-casting) : 기본 클래스의 포인터가 파생 클래스의 포인터에 치환되는 것 (ex. pDer = (ColorPoint *) pBase; )</li>
+    </ul>
+  </li>
+  <li>접근 지정자
+    <ul>
+      <li>private 멤버</li>
+      <li>public 멤버</li>
+      <li>protected 멤버 : 파생 클래스에만 접근이 허용된다.</li>
+    </ul>
+  </li>
+  <li>상속과 생성자, 소멸자
+    <ul>
+      <li>파생 클래스 객체가 생성될 때 파생 클래스의 생성자와 기본 클래스의 생성자 모두 실행된다.(기본 실행 후 파생 클래스 실행)</li>
+      <li>소멸자는 생성자와 반대 순서로 실행된다.</li>
+      <li>파생 클래스인 B(int x) 생성자를 실행하면, 기본 클래스의 A() 생성자를 컴파일러가 묵시적으로 B(int x) : A()로 삽입한다. 단 A() 생성자를 찾을 수 없다면 컴파일 오류가 발생한다.</li>
+    </ul>
+  </li>
+  <li>상속의 종류</li>
+  <li>다중 상속
+    <ul>
+      <li>ex. class MusicPhone : public MP3, public MobilePhone {};</li>
+    </ul>
+  </li>
+  <li>가상 상속
+    <ul>
+      <li>다중 상속으로 인한 기본 클래스 멤버의 중복 상속을 해결한다.</li>
+      <li>파생 클래스의 선언문에서 기본 클래스 앞에 virtual로 선언한다. (ex. class In : virtual public BaseIO {}</li>
+      <li>파생 클래스의 객체가 생성될 때 기본 클래스의 멤버는 오직 한 번만 생성한다.</li>
+      <li>상속 되지 않는 멤버 : 기본 생성자, 매개변수가 있는 생성자, 복사 생성자, 소멸자, 대입 연산자</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="학습-평가">학습 평가</h3>
+<p>주의 깊게 봐야할 점:</p>
+<ul>
+  <li>상속 되지 않는 멤버 : 기본 생성자, 매개변수가 있는 생성자, 복사 생성자, 소멸자, 대입 연산자</li>
+  <li>파생 클래스의 생성자에서 베이스 클래스의 생성자를 호출하고, 소멸자에서 베이스 클래스의 소멸자를 호출해서 베이스 클래스의 private 데이터 멤버를 소멸시켜야 한다.</li>
+  <li>업 캐스팅과 다운 캐스팅에서 객체 포인터가 어떻게 사용되는지, 각각 어떻게 사용하는지 유의있게 봐야한다.</li>
+</ul>]]></content><author><name>GitHub User</name></author><category term="Week_plus" /><summary type="html"><![CDATA[일곱 번째 활동 일지 일시 : 2022.11.23 16:00~18:30 작성자 : 빅데이터전공 20215230 장다연 학습 목표 : ‘상속’ 공부]]></summary></entry><entry><title type="html">6주차 활동일지_이화원</title><link href="/jekyll-theme-yat/week_06/2022/11/16/Week06-Hwawon.html" rel="alternate" type="text/html" title="6주차 활동일지_이화원" /><published>2022-11-16T00:00:00+00:00</published><updated>2022-11-16T00:00:00+00:00</updated><id>/jekyll-theme-yat/week_06/2022/11/16/Week06-Hwawon</id><content type="html" xml:base="/jekyll-theme-yat/week_06/2022/11/16/Week06-Hwawon.html"><![CDATA[<h2 id="여섯-번째-활동-일지">여섯 번째 활동 일지</h2>
+<p><strong>일시 :</strong> 2022.11.16 16:00~18:30<br />
+<strong>작성자 :</strong> 콘텐츠IT전공 20215772 이화원<br />
+<strong>학습 목표 :</strong> 멤버 함수로 연산자 구현, 프렌드를 이용한 연산자 중복
+<strong>주요학습내용</strong>
+-이항 연산자 중복
+-단항 연산자 중복
+-</p>
+
+<p><strong>오늘의 학습 계획</strong></p>
+<ol>
+  <li>cpp_08_프렌드와연산자중복 강의 영상을 보며 공부</li>
+  <li>cpp_08_프렌드와연산자중복ex 실습 문제 코딩</li>
+  <li>학습 평가</li>
+</ol>
+
+<h3 id="요약-정리">요약 정리</h3>
+<p>연산자 중복이란 피연산자에 딸라 서로 다른 연산을 하도록 연산자를 중복 작성하는 것을 이야기합니다. 저번주와는 다르게 구현부분을 공부 하였습니다.
+연산자 멤버함수를 구현하기 위해서는 예를 들어 +=연산자를 작성할때 클래스에서 public:	Power&amp; operator+=(const Power&amp; op2);를 선언하여 주고 Power&amp; Power::operator+=(const Power&amp; op2) {내용은 학습평가에..}로 클래스 외부에서 내용을 한번더 구현 해줍니다. 단항 연산자란 피연산자가 하나 뿐인 연산자로 연산자 중복방식은 이항 연산자와 거의 비슷합니다. 단항 연산자의 종류로는 전위 연산자와 후위 연산자가 있습니다. 전위 연산자는 증가 이후의 객체 자신을 리턴하는 연산자 함수를 구현하여 객체 객체 자신의 참조를 리턴하는 것이 대 표적 입니다. 후위 연산자는 증가 이전의 객체를 저장하고 객체를 증가시킨 후에 증가 이전의 객체를 리턴하는 방식으로 구현합니다. 연산자 함수는 friend로도 선언이 가능합니다. private,protected로 선언 되어 있는 외부 객체에도 접근 하기 위하여 쓰입니다.</p>
+
+<h3 id="학습-평가">학습 평가</h3>
+
+<p>기억해야 할 예시를 적었습니다.
+-연산자 중복 구현 예시(+중복)
+	class Power {
+	int kick;
+	int punch;
+	public:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Power operator+ (Power op2);//연산자 함수 선언
+};
+
+Power Power::operator+(Power op2) {
+Power tmp;//임시 객체 생성
+tmp.kick = this-&gt;kick + op2.kick;//kick 더하기
+tmp.punch = this-&gt;punch + op2.punch;//punch 더하기
+return tmp;// 더한 결과 리턴
+}
+</code></pre></div></div>
+
+<p>-전위 연산자 중복 예시 (연산자 중복 예시라 형식은 같습니다.)
+	class Power {
+	int kick, punch;
+	public:
+	Power&amp; operator++ (); //전위 ++ 연산자 함수 선언
+	};</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Power&amp; Power::operator++() {
+kick++;
+punch++;
+return *this; //변경된 객체 자신(객체 a)의 참조 리턴
+}
+	-전위 연산자(!변수, ~변수, ++변수, --변수) -후위 연산자 중복 예시 (위와 마찬가지로 형식은 같습니다.)
+class Power {
+public:
+Power operator ++ (int x );
+};
+Power Power::operator++(int x) {
+Power tmp = *this; // 증가 이전 객체 상태 저장
+kick++;
+punch++;
+return tmp; // 증가 이전의 객체(객체 a) 리턴
+} -프렌드 연산자 중복 예시
+class Power {
+int kick, punch;
+public:
+void show(string obj);
+friend Power operator+(const Power&amp; op1, const Power&amp; op2); //프렌드 선언
+};
+Power operator+(const Power&amp; op1, const Power&amp; op2) {
+Power tmp; //임시 객체 생성
+tmp.kick = op1.kick + op2.kick; 
+tmp.punch = op1.punch + op2.punch; 
+return tmp; //임시 객체 리턴
+}
+</code></pre></div></div>
+
+<p>이번 공부를 통하여 연산자 중복을 하는 다양한 예시와 연산자 중복시에 private,protected로 선언되어 있는 외부 객체를 사용하기 위하여 friend를 사용한다는 것과 연산자 중복의 다양한 예시를 통하여 연산자 중복을 구현하는 방법을 배우게 되었습니다. 도한 연산자 함수를 우리가 원하는 연산으로 만들 수도 있다는 것이 흥미로 웠습니다.</p>]]></content><author><name>GitHub User</name></author><category term="Week_06" /><summary type="html"><![CDATA[여섯 번째 활동 일지 일시 : 2022.11.16 16:00~18:30 작성자 : 콘텐츠IT전공 20215772 이화원 학습 목표 : 멤버 함수로 연산자 구현, 프렌드를 이용한 연산자 중복 주요학습내용 -이항 연산자 중복 -단항 연산자 중복 -]]></summary></entry><entry><title type="html">6주차 활동사진</title><link href="/jekyll-theme-yat/picture/2022/11/16/Week06.html" rel="alternate" type="text/html" title="6주차 활동사진" /><published>2022-11-16T00:00:00+00:00</published><updated>2022-11-16T00:00:00+00:00</updated><id>/jekyll-theme-yat/picture/2022/11/16/Week06</id><content type="html" xml:base="/jekyll-theme-yat/picture/2022/11/16/Week06.html"><![CDATA[<p><img src="/assets/images/week_images/KakaoTalk_20221123_174816084.jpg" alt="1주차사진" /></p>]]></content><author><name>GitHub User</name></author><category term="Picture" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">6주차 활동일지_최지민</title><link href="/jekyll-theme-yat/week_06/2022/11/16/week06-jimin.html" rel="alternate" type="text/html" title="6주차 활동일지_최지민" /><published>2022-11-16T00:00:00+00:00</published><updated>2022-11-16T00:00:00+00:00</updated><id>/jekyll-theme-yat/week_06/2022/11/16/week06-jimin</id><content type="html" xml:base="/jekyll-theme-yat/week_06/2022/11/16/week06-jimin.html"><![CDATA[<h2 id="여섯-번째-활동-일지">여섯 번째 활동 일지</h2>
+<p><strong>일시 :</strong> 2022.11.16 16:00~18:30<br />
+<strong>작성자 :</strong> 콘텐츠IT전공 20215263 최지민 <br /></p>
+
+<p><strong>주요 학습 내용</strong></p>
+
+<ul>
+  <li>객체 포인터</li>
+  <li>this 포인터</li>
+  <li>스마트 포인터</li>
+  <li>객체 포인터 배열
+<br /></li>
+</ul>
+
+<p><strong>오늘의 학습 계획</strong></p>
+
+<ol>
+  <li>해당 내용 ppt 복습 및 공부</li>
+  <li>6주차 실습 문제</li>
+</ol>
+
+<h3 id="요약-정리">요약 정리</h3>
+<p>객체 포인터</p>
+<ul>
+  <li>객체에 대한 포인터 : 객체의 주소 값을 가지는 변수</li>
+  <li>포인터로 멤버를 접근할 때 : 객체 포인터 -&gt; 멤버 == (*객체포인터).멤버</li>
+</ul>
+
+<p>배열의 동적 할당 및 반환</p>
+<ul>
+  <li>배열 형태로 동적 생성한 것은 배열 형태로 삭제</li>
+  <li>배열 인덱스 표시는 생략 불가
+EX) int *p = new int[5];
+  delete [] p;</li>
+</ul>
+
+<p>객체 포인터 배열</p>
+<ul>
+  <li>3개의 객체 주소를 저장할 수 있는 객체 포인터 배열 선언을 선언하여 Person 클래스 객체 처리</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	<span class="n">Person</span> <span class="o">*</span><span class="n">per</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span> 
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">delete</span> <span class="n">per</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="c1">//n번 객체 생성, n번 객체 소멸</span>
+	<span class="p">}</span>
+</code></pre></div></div>
+
+<p>스마트 포인터</p>
+<ul>
+  <li>unique_ptr
+    <ul>
+      <li>하나의 스마트 포인터만 객체를 소유</li>
+      <li>스마트 포인터가 영역을 벗어나거나 리셋 되면 참조하던 resource 해제</li>
+      <li>소유권 이전은 가능, 복사나 대입과 같은 공유는 불허</li>
+    </ul>
+  </li>
+  <li>shared_ptr
+    <ul>
+      <li>하나의 특정 객체를 참조하는 스마트 포인터의 개수(reference count)를 참조하는 스마트 포인터</li>
+      <li>참조 카운트(reference count), use_count() : shared_ptr가 추가될 때 1씩 증가, 수명이 다하면 1씩 감소, 0이 되면 메모리 자동 해제</li>
+    </ul>
+  </li>
+  <li>weak_ptr
+    <ul>
+      <li>하나 이상의 shared_ptr가 가리키는 객체를 참조할 수 있지만 reference count를 늘리지않는 스마트 포인터</li>
+      <li>순환 참조를 제거하기 위해 사용</li>
+    </ul>
+  </li>
+</ul>
+
+<p>this 포인터</p>
+<ul>
+  <li>포인터, 객체 자신 포인터</li>
+  <li>클래스의 멤버 함수 내에서만 사용</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Circle</span> <span class="p">{</span>
+	<span class="kt">int</span> <span class="n">radius</span><span class="p">;</span>
+	<span class="nl">public:</span>
+		<span class="n">Circle</span><span class="p">()</span> <span class="p">{</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+		<span class="n">Circle</span><span class="p">(</span><span class="kt">int</span> <span class="n">radius</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="p">;</span> <span class="p">}</span>
+		<span class="kt">void</span> <span class="n">setRadius</span><span class="p">(</span><span class="kt">int</span> <span class="n">radius</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="p">;</span> <span class="p">}</span>
+	<span class="p">....</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="학습-평가">학습 평가</h3>
+
+<p>객체 포인터에 대한 개념이 모호했으나, 복습을 통해 개념을 더 잡을 수 있었다. 배열 형태로 동적 생성한 것은 배열 형태로 삭제해야 한다는 것을 기억해야 할 것 같다.<br />
+this의 경우에도 멤버 함수가 아닌 함수에서 사용이 불가한 점, static 멤버 함수에서는 this를 사용할 수 없다는 점을 유의하고 사용해야 할 것 같다.</p>]]></content><author><name>GitHub User</name></author><category term="Week_06" /><summary type="html"><![CDATA[여섯 번째 활동 일지 일시 : 2022.11.16 16:00~18:30 작성자 : 콘텐츠IT전공 20215263 최지민]]></summary></entry><entry><title type="html">6주차 실습코드_박다현</title><link href="/jekyll-theme-yat/week_06/2022/11/16/week6_Dahyun-code.html" rel="alternate" type="text/html" title="6주차 실습코드_박다현" /><published>2022-11-16T00:00:00+00:00</published><updated>2022-11-16T00:00:00+00:00</updated><id>/jekyll-theme-yat/week_06/2022/11/16/week6_Dahyun-code</id><content type="html" xml:base="/jekyll-theme-yat/week_06/2022/11/16/week6_Dahyun-code.html"><![CDATA[<h2 id="1번">1번</h2>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Calculator
+{
+protected:
+    int a, b;
+
+public:
+    Calculator(int a, int b) : a(a), b(b) {}
+    virtual int calc() = 0;
+    virtual void write()
+    {
+        cout &lt;&lt; "a:" &lt;&lt; a &lt;&lt; "\tb:" &lt;&lt; b &lt;&lt; " =&gt;";
+    }
+};
+class Adder : public Calculator
+{
+public:
+    Adder(int a, int b) : Calculator(a, b) {}
+    int sum()
+    {
+        int sum = 0;
+        for (int i = a; i &lt;= b; i++)
+            sum += i;
+
+        return sum;
+    }
+    int calc()
+    {
+        return a + b;
+    }
+};
+class Mul : public Calculator
+{
+public:
+    Mul(int a, int b) : Calculator(a, b) {}
+    int calc()
+    {
+        return a * b;
+    }
+};
+
+class Manage
+{
+public:
+    static void run()
+    {
+        int num, n1, n2;
+        while (true)
+        {
+            cout &lt;&lt; "선택하세요" &lt;&lt; endl;
+            cout &lt;&lt; "1:add 2:multiply 3.finish &gt;&gt; ";
+            cin &gt;&gt; num;
+            if (num == 3)
+                break;
+            cout &lt;&lt; "정수 2개를 입력하세요 &gt;&gt; ";
+            cin &gt;&gt; n1 &gt;&gt; n2;
+            if (num == 1)
+            {
+                Adder add(n1, n2);
+                Calculator *cal = &amp;add;
+                cal-&gt;write();
+                cout &lt;&lt; cal-&gt;calc() &lt;&lt; endl;
+                cout &lt;&lt; "sum : " &lt;&lt; add.sum() &lt;&lt; endl;
+            }
+            else if (num == 2)
+            {
+                Mul mul(n1, n2);
+                Calculator *cal = &amp;mul;
+                cal-&gt;write();
+                cout &lt;&lt; cal-&gt;calc() &lt;&lt; endl;
+            }
+        }
+    }
+};
+
+int main()
+{
+    Manage::run();
+}
+</code></pre>
+<h2 id="2번">2번</h2>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+class AbstractGate
+{
+	bool x, y;
+
+public:
+	virtual bool operation(bool x, bool y) = 0;
+};
+
+class ANDGate : public AbstractGate
+{
+public:
+	virtual bool operation(bool x, bool y)
+	{
+		if (x == false || y == false)
+			return false;
+		else
+			return true;
+	}
+};
+class ORGate : public AbstractGate
+{
+public:
+	virtual bool operation(bool x, bool y)
+	{
+		if (x == true || y == true)
+			return true;
+		else
+			return false;
+	}
+};
+class XORGate : public AbstractGate
+{
+public:
+	virtual bool operation(bool x, bool y)
+	{
+		if (x != y)
+			return true;
+		else
+			return false;
+	}
+};
+class Manage
+{
+public:
+	static void go()
+	{
+		int num, n1, n2;
+		while (true)
+		{
+			cout &lt;&lt; "연산 종류를 선택하세요 1.and 2.or 3.xor 4.stop &gt;&gt; ";
+			cin &gt;&gt; num;
+			if (num == 4)
+				break;
+			cout &lt;&lt; "게이트 입력 값 &gt;&gt; ";
+			cin &gt;&gt; n1 &gt;&gt; n2;
+			if (num == 1)
+			{
+				ANDGate andgate;
+				AbstractGate *ab = &amp;andgate;
+				cout &lt;&lt; "AND : " &lt;&lt; boolalpha &lt;&lt; n1 &lt;&lt; "," &lt;&lt; n2 &lt;&lt; "=&gt;" &lt;&lt; ab-&gt;operation(n1, n2) &lt;&lt; endl;
+			}
+			else if (num == 2)
+			{
+				ORGate orgate;
+				AbstractGate *ab = &amp;orgate;
+				cout &lt;&lt; "OR : " &lt;&lt; boolalpha &lt;&lt; n1 &lt;&lt; "," &lt;&lt; n2 &lt;&lt; "=&gt;" &lt;&lt; ab-&gt;operation(n1, n2) &lt;&lt; endl;
+			}
+			else if (num == 3)
+			{
+				XORGate xorgate;
+				AbstractGate *ab = &amp;xorgate;
+				cout &lt;&lt; "XOR : " &lt;&lt; boolalpha &lt;&lt; n1 &lt;&lt; "," &lt;&lt; n2 &lt;&lt; "=&gt;" &lt;&lt; ab-&gt;operation(n1, n2) &lt;&lt; endl;
+			}
+		}
+	}
+};
+int main()
+{
+	Manage::go();
+}
+</code></pre>
+<h2 id="3번">3번</h2>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Shape
+{
+protected:
+    string name;       // 도형의 이름
+    int width, height; // 도형이 내접하는 사각형
+public:
+    Shape(string n = "", int w = 0, int h = 0)
+    {
+        name = n;
+        width = w;
+        height = h;
+    }
+    virtual double getArea()
+    {
+        return 0;
+    }
+    string getName() { return name; } // 이름 리턴
+};
+
+class Oval : public Shape
+{
+public:
+    Oval(string n, int w, int h) : Shape(n, w, h) {}
+    double getArea()
+    {
+        return width * height * 3.14;
+    }
+    string getName()
+    {
+        return name;
+    }
+};
+
+class Rect : public Shape
+{
+public:
+    Rect(string n, int w, int h) : Shape(n, w, h) {}
+    double getArea()
+    {
+        return width * height;
+    }
+    string getName()
+    {
+        return name;
+    }
+};
+
+class Triangular : public Shape
+{
+public:
+    Triangular(string n, int w, int h) : Shape(n, w, h) {}
+    double getArea()
+    {
+        return (width * height) / 2;
+    }
+    string getName()
+    {
+        return name;
+    }
+};
+
+int main()
+{
+    Shape *p[3];
+    p[0] = new Oval("빈대떡", 10, 20);
+    p[1] = new Rect("찰떡", 30, 40);
+    p[2] = new Triangular("토스트", 30, 40);
+    for (int i = 0; i &lt; 3; i++)
+        cout &lt;&lt; p[i]-&gt;getName() &lt;&lt; " 넓이는 " &lt;&lt; p[i]-&gt;getArea() &lt;&lt; endl;
+
+    for (int i = 0; i &lt; 3; i++)
+        delete p[i];
+}
+</code></pre>
+<h2 id="4번">4번</h2>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Converter
+{
+protected:
+    double ratio;
+    virtual double convert(double src) = 0; // src를 다른 단위로 변환한다.
+    virtual string getSourceString() = 0;   // 소스 단위 명칭
+    virtual string getDestString() = 0;     // dest 단위 명칭
+public:
+    Converter(double ratio) { this-&gt;ratio = ratio; }
+    void run()
+    {
+        double src;
+        cout &lt;&lt; getSourceString() &lt;&lt; "을 " &lt;&lt; getDestString() &lt;&lt; "로 바꿉니다. ";
+        cout &lt;&lt; getSourceString() &lt;&lt; "을 입력하세요&gt;&gt; ";
+        cin &gt;&gt; src;
+        cout &lt;&lt; "변환 결과 : " &lt;&lt; convert(src) &lt;&lt; getDestString() &lt;&lt; endl;
+    }
+};
+class KmToMile : public Converter
+{
+public:
+    KmToMile(double ratio) : Converter(ratio) {}
+    double convert(double src)
+    {
+        return src / ratio;
+    }
+    string getSourceString()
+    {
+        return "Km";
+    }
+    string getDestString()
+    {
+        return "Mile";
+    }
+};
+
+class WonToDollar : public Converter
+{
+public:
+    WonToDollar(int ratio) : Converter(ratio) {}
+    double convert(double src)
+    {
+        return src / ratio;
+    }
+    string getSourceString()
+    {
+        return "원";
+    }
+    string getDestString()
+    {
+        return "달러";
+    }
+};
+
+int main()
+{
+    KmToMile toMile(1.609344); // 1mile은 1.609344 Km
+    WonToDollar wd(1010);      // 1 달러에 1010원
+    Converter *cp = &amp;toMile;
+    cp-&gt;run();
+    cp = &amp;wd;
+    cp-&gt;run();
+}
+</code></pre>
+<h2 id="5번">5번</h2>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Tool
+{
+    string type;
+
+public:
+    Tool() = default;
+    Tool(string type) : type(type) {}
+    string getType()
+    {
+        return type;
+    }
+    virtual void write()
+    {
+        cout &lt;&lt; "type &gt;&gt; " &lt;&lt; type &lt;&lt; endl;
+    }
+
+    virtual void cut() = 0; //자르다
+    virtual void dry() = 0; //말리다
+};
+
+class Hair : public Tool
+{
+    string style;
+
+public:
+    Hair(string type, string style) : Tool(type)
+    {
+        this-&gt;style = style;
+    }
+    void tint(string color)
+    {
+        getType() = color;
+        cout &lt;&lt; "Hair(을)를 " &lt;&lt; color &lt;&lt; " 색으로 염색하다" &lt;&lt; endl;
+    }
+    void cut()
+    {
+        cout &lt;&lt; "Hair (을)를 자르다" &lt;&lt; endl;
+    }
+    void dry()
+    {
+        cout &lt;&lt; "Hair (을)를 말리다" &lt;&lt; endl;
+    }
+    void write()
+    {
+        Tool::write();
+        cout &lt;&lt; "style &gt;&gt; " &lt;&lt; style &lt;&lt; endl;
+    }
+};
+
+class Paper : public Tool
+{
+    string size;
+
+public:
+    Paper(string type, string size) : Tool(type)
+    {
+        this-&gt;size = size;
+    }
+    void draw()
+    {
+        cout &lt;&lt; "크기가 " &lt;&lt; size &lt;&lt; " 인 종이에 그림을 그립니다" &lt;&lt; endl;
+    }
+    void cut()
+    {
+        cout &lt;&lt; "Paper (을)를 정해진 규격으로 자르다" &lt;&lt; endl;
+    }
+    void dry()
+    {
+        cout &lt;&lt; "Paper (을)를 건조한다" &lt;&lt; endl;
+    }
+    void write()
+    {
+        Tool::write();
+        cout &lt;&lt; "size &gt;&gt; " &lt;&lt; size &lt;&lt; endl;
+    }
+};
+
+void show(Tool *tool)
+{
+    tool-&gt;write();
+    tool-&gt;cut();
+    tool-&gt;dry();
+}
+
+int main()
+{
+    Hair h("Hair", "wave");
+    Paper p("Paper", "A3");
+    cout &lt;&lt; "=== Hair 클래스 ===" &lt;&lt; endl;
+    show(&amp;h);
+    h.tint("red");
+    cout &lt;&lt; "=== Paper 클래스 ===" &lt;&lt; endl;
+    show(&amp;p);
+    p.draw();
+    return 0;
+}
+</code></pre>]]></content><author><name>GitHub User</name></author><category term="Week_06" /><summary type="html"><![CDATA[1번 ```C++ #include #include using namespace std;]]></summary></entry><entry><title type="html">6주차 활동일지_박다현</title><link href="/jekyll-theme-yat/week_06/2022/11/16/week6_Dahyun.html" rel="alternate" type="text/html" title="6주차 활동일지_박다현" /><published>2022-11-16T00:00:00+00:00</published><updated>2022-11-16T00:00:00+00:00</updated><id>/jekyll-theme-yat/week_06/2022/11/16/week6_Dahyun</id><content type="html" xml:base="/jekyll-theme-yat/week_06/2022/11/16/week6_Dahyun.html"><![CDATA[<h2 id="여섯-번째-활동-일지">여섯 번째 활동 일지</h2>
+<p><strong>일시 :</strong> 2022.11.16 16:00~18:30<br />
+<strong>작성자 :</strong> 콘텐츠IT전공 20205166 박다현<br />
+<strong>학습 목표 :</strong> 템플릿과STL</p>
+
+<p><strong>주요학습내용</strong></p>
+<ul>
+  <li>일반화와 템플릿</li>
+  <li>템플릿 함수 만들기</li>
+  <li>템플릿 클래스 만들기</li>
+  <li>STL 활용</li>
+  <li>람다식</li>
+</ul>
+
+<p><strong>오늘의 학습 계획</strong></p>
+<ol>
+  <li>Ch010_템플릿과STL 수업자료 ppt 공부</li>
+  <li>12주차 실습 문제 코딩</li>
+  <li>학습 평가
+    <h3 id="요약-정리">요약 정리</h3>
+    <p>템플릿을 선언하기 위해 사용하는 키워드는 template이다. <br />
+제네릭 타입을 선언하는 키워드는 class 이다. <br />
+템플릿 함수와 동일한 이름의 함수가 중복되어 있을 경우 템플릿 함수가 우선적으로 바인딩되지 않는다. <br />
+C++ 표준STL 라이브러리가 작성된 이름공간은 std 이다. <br />
+제네릭 함수나 제네릭 클래스를 활용하는 프로그래밍 기법을 일반화 프로그래밍이라고 한다. <br />
+템플릿 함수는 오버로딩을 할 수 있다. <br />
+템플릿을 사용하면 컴파일 오류메시지가 풍부하지 않아 디버깅에 어렵다. <br />
+map 컨테이너 요소들은 키값을 기준으로 오름차순으로 정렬된다. <br />
+람다식에서 리턴타입은 생략할 수 있다. <br />
+람다식에서 함수 바깥의 변수 목록을 사용하려면 캡쳐리스트로 작성하면 된다.</p>
+  </li>
+</ol>
+
+<h3 id="학습-평가">학습 평가</h3>
+<p>이번 학습에서는 템플릿에 대해 공부하였는 데 템플릿은 함수 코드의 재사용에 유용하지만 컴파일 오류 메시지가 빈약하여 디버깅에 많은 어려움이 있기 때문에 아직 초보인 내가 주로 사용하진 못할거 같다는 생각을 하였다. 그래서 오늘 배운 내용은 코드를 깨끗하게 작성하기 위해 사용하는 다양한 기법들이기 때문에 기억해두었다가 코딩에 좀 더 익숙해지면 사용할 것 같다. 그 중 람다는 수학 함수를 단순하게 표현하는 기법으로 사용 빈도가 높을 것으로 예상된다.</p>]]></content><author><name>GitHub User</name></author><category term="Week_06" /><summary type="html"><![CDATA[여섯 번째 활동 일지 일시 : 2022.11.16 16:00~18:30 작성자 : 콘텐츠IT전공 20205166 박다현 학습 목표 : 템플릿과STL]]></summary></entry><entry><title type="html">6주차 활동일지_장다연</title><link href="/jekyll-theme-yat/week_06/2022/11/16/week6_Dayeon.html" rel="alternate" type="text/html" title="6주차 활동일지_장다연" /><published>2022-11-16T00:00:00+00:00</published><updated>2022-11-16T00:00:00+00:00</updated><id>/jekyll-theme-yat/week_06/2022/11/16/week6_Dayeon</id><content type="html" xml:base="/jekyll-theme-yat/week_06/2022/11/16/week6_Dayeon.html"><![CDATA[<h2 id="여섯-번째-활동-일지">여섯 번째 활동 일지</h2>
+<p><strong>일시 :</strong> 2022.11.16 16:00~18:30<br />
+<strong>작성자 :</strong> 빅데이터전공 20215230 장다연<br />
+<strong>학습 목표 :</strong> ‘프렌드와 연산자 중복’ 공부</p>
+
+<p><strong>주요학습내용</strong></p>
+<ul>
+  <li>프렌드 함수를 이해하고 연산자 중복에 활용할 수 있다.</li>
+  <li>연산자 함수를 이해하고 활용할 수 있다.</li>
+  <li>다양한 연산자를 중복 정의할 수 있다.</li>
+  <li>멤버 함수로 연산자 중복을 구현하고 활용할 수 있다.</li>
+  <li>외부 함수로 연산자 중복을 구현하고 활용할 수 있다.</li>
+</ul>
+
+<p><strong>오늘의 학습 계획</strong></p>
+<ol>
+  <li>‘C++ 프로그래밍-양은샘 교수님’ 수업 정리</li>
+  <li>실습 문제 풀이</li>
+  <li>학습 평가</li>
+</ol>
+
+<h3 id="요약-정리">요약 정리</h3>
+<ol>
+  <li>프렌드 함수
+    <ul>
+      <li>프렌드 함수는 클래스의 멤버 함수가 아닌 외부 함수여서 상속이 불가능하다.</li>
+      <li>friend 키워드로 클래스 내에 선언된 함수이다. ( 클래스의 모든 멤버를 접근할 수 있는 권한 부여)</li>
+      <li>클래스의 멤버로 선언하기에는 무리이고, 클래스의 모든 멤버를 자유롭게 접근해야 할 경우에 이용한다.</li>
+      <li>플렌드 함수가 되는 3가지 : 전역 함수, 다른 클래스의 특정 멤버 함수, 다른 클래스의 모든 멤버 함수</li>
+    </ul>
+  </li>
+  <li>프렌드 선언
+    <ul>
+      <li>외부 함수 equals()를 Rect 클래스에 프렌드로 선언할 때 : friend bool equals(Rect r, Rect s);</li>
+      <li>RectManager 클래스의 equals() 멤버 함수를 Rect 클래스에 프렌드로 선언할 때 : friend bool RectManager::equals(Rect r, Rect s);</li>
+      <li>RectManager 클래스의 모든 멤버 함수를 Rect 클래스에 프렌드로 선언할 때 : friend RectManager;</li>
+    </ul>
+  </li>
+  <li>연산자 중복
+    <ul>
+      <li>피 연산자에 따라 서로 다른 연산을 하도록 연산자를 중복 작성하는 것이다.</li>
+    </ul>
+  </li>
+  <li>연산자 함수
+    <ul>
+      <li>연산자 함수는 1. 클래스의 멤버 함수로 구현( pos1.operator+(pos2); ) 2. 외부 함수로 구현하고 클래스에 프렌드 함수로 선언( operator+(pos1,pos2) ) 하는 2가지 방식으로 구현할 수 있다.</li>
+      <li>연산자 함수 형식 : 리턴타입 operator 연산자(매개변수리스트);</li>
+    </ul>
+  </li>
+  <li>복사 대입 연산자 &amp; 이동 대입 연산자</li>
+</ol>
+
+<h3 id="실습-문제-풀이">실습 문제 풀이</h3>
+<script src="https://gist.github.com/ABCplus22/cff6c92a58af309f40891c75572de3da.js"></script>
+
+<h3 id="학습-평가">학습 평가</h3>
+<p>주의있게 봐야할 점 :</p>
+<ul>
+  <li>멤버 함수로 구현할 때 복사 대입 연산자와 이동 대입 연산자가 어떻게 쓰이는지 자세히 확인하고 각각의 연산자마다 특징을 확인해야 한다.</li>
+</ul>]]></content><author><name>GitHub User</name></author><category term="Week_06" /><summary type="html"><![CDATA[여섯 번째 활동 일지 일시 : 2022.11.16 16:00~18:30 작성자 : 빅데이터전공 20215230 장다연 학습 목표 : ‘프렌드와 연산자 중복’ 공부]]></summary></entry><entry><title type="html">6주차 활동일지_정다영</title><link href="/jekyll-theme-yat/week_06/2022/11/16/week6_Dayoung.html" rel="alternate" type="text/html" title="6주차 활동일지_정다영" /><published>2022-11-16T00:00:00+00:00</published><updated>2022-11-16T00:00:00+00:00</updated><id>/jekyll-theme-yat/week_06/2022/11/16/week6_Dayoung</id><content type="html" xml:base="/jekyll-theme-yat/week_06/2022/11/16/week6_Dayoung.html"><![CDATA[<h2 id="여섯-번째-활동-일지">여섯 번째 활동 일지</h2>
+<p><strong>일시 :</strong> 2022.11.16 16:00~18:30<br />
+<strong>작성자 :</strong> 콘텐츠IT전공 20215238 정다영 <br />
+<strong>학습 목표 :</strong> 상속</p>
+
+<p><strong>주요학습내용</strong></p>
+<ul>
+  <li>상속 개념</li>
+  <li>클래스상속과 객체</li>
+  <li>접근 지정자</li>
+  <li>상속과 생성자, 소멸자</li>
+  <li>상속의 종류</li>
+  <li>다중 상속</li>
+</ul>
+
+<p><strong>오늘의 학습 계획</strong></p>
+<ol>
+  <li>Ch08_상속 수업자료 ppt 공부</li>
+  <li>12주차 실습 문제 코딩</li>
+  <li>학습 평가
+    <h3 id="요약-정리">요약 정리</h3>
+  </li>
+</ol>
+
+<h4 id="상속이란">상속이란?</h4>
+<p>객체가 생성될 때 자신의 멤버 뿐 아니라 부모 클래스의 멤버를 포함할 것을 지시하여 기본 클래스의 속성과 기능을 파생 클래스에 물려주는 것</p>
+
+<ul>
+  <li>기본 클래스(base class, superclass) : 상속 해 주는 클래스. 부모 클래스</li>
+  <li>파생 클래스(derived class, subclass) : 상속 받는 클래스. 자식 클래스</li>
+</ul>
+
+<p>• 여러 개의 클래스를 동시에 상속 받는 다중 상속 허용</p>
+
+<h5 id="상속의-선언">상속의 선언</h5>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Student</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Person</span> <span class="p">{</span> <span class="c1">// Person을 상속받는 Student 선언</span>
+<span class="c1">// Person 클래스의 멤버를 물려 받음</span>
+<span class="c1">//기본 클래스명 : Person</span>
+<span class="c1">//파생 클래스명: Student</span>
+<span class="c1">//상속 접근 지정 – private, protected 도 가능</span>
+<span class="p">.....</span>
+<span class="p">};</span>
+<span class="k">class</span> <span class="nc">StudentWorker</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Student</span> <span class="p">{</span><span class="c1">// Student를 상속받는 StudentWorker 선언</span>
+<span class="c1">// Student가 물려받은 Person의 멤버도 함께 물려받음</span>
+<span class="p">.....</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="업-캐스팅up-casting--기본-클래스의-포인터--파생-클래스의-포인터">업 캐스팅(up-casting) : 기본 클래스의 포인터 = 파생 클래스의 포인터;</h4>
+<h4 id="다운-캐스팅down-casting--파생-클래스의-포인터--기본-클래스의-포인터">다운 캐스팅(down-casting) : 파생 클래스의 포인터 = 기본 클래스의 포인터;</h4>
+
+<h4 id="접근-지정자">접근 지정자</h4>
+<ol>
+  <li>
+    <p>private 멤버
+• 선언된 클래스 내에서만 접근 가능 <br />
+• 파생 클래스에서도 기본 클래스의 private 멤버에는 직접 접근 불가</p>
+  </li>
+  <li>
+    <p>public 멤버
+• 선언된 클래스나 외부 어떤 클래스, 모든 외부 함수에 접근 허용 <br />
+• 파생 클래스에서 기본 클래스의 public 멤버 접근 가능</p>
+  </li>
+  <li>
+    <p>protected 멤버 <br />
+• 선언된 클래스에서 접근 가능 <br />
+• 파생 클래스에서만 접근 허용 <br />
+• 파생 클래스가 아닌 다른 클래스나 외부 함수에서는 protected 멤버를 접근할 수 없다.</p>
+  </li>
+</ol>
+
+<h4 id="상속과-생성자-소멸자">상속과 생성자, 소멸자</h4>
+<h5 id="생성자-실행-순서">생성자 실행 순서</h5>
+<ul>
+  <li>파생 클래스의 객체가 생성될 때 파생 클래스의 생성자와 기본 클래스의 생성자 모두 실행됨.</li>
+  <li>생성자는 기본 클래스의 생성자가 먼저 실행된 후 파생 클래스의 생성자가 실행됨.</li>
+</ul>
+
+<h5 id="소멸자-실행-순서">소멸자 실행 순서</h5>
+<ul>
+  <li>파생 클래스의 객체가 소멸될 때 파생 클래스의 소멸자가 먼저 실행되고, 기본 클래스의 소멸자가 나중에 실행 됨.</li>
+</ul>
+
+<h4 id="상속의-종류">상속의 종류</h4>
+<ul>
+  <li>public으로 선언 : 기본 클래스의 protected, public 멤버 속성을 그대로 계승</li>
+  <li>protected으로 선언 : 기본 클래스의 protected, public 멤버를 protected로 계승</li>
+  <li>private으로 선언 : 기본 클래스의 protected, public 멤버를 private으로 계승</li>
+</ul>
+
+<h4 id="다중-상속">다중 상속</h4>
+<h5 id="다중-상속-선언-및-활용">다중 상속 선언 및 활용</h5>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MP3</span> <span class="p">{</span>
+<span class="nl">public:</span>
+  <span class="kt">void</span> <span class="n">play</span><span class="p">();</span>
+  <span class="kt">void</span> <span class="n">stop</span><span class="p">();</span>
+<span class="p">};</span>
+<span class="k">class</span> <span class="nc">MobilePhone</span> <span class="p">{</span>
+<span class="nl">public:</span>
+  <span class="kt">bool</span> <span class="n">sendCall</span><span class="p">();</span>
+  <span class="kt">bool</span> <span class="n">receiveCall</span><span class="p">();</span>
+  <span class="kt">bool</span> <span class="n">sendSMS</span><span class="p">();</span>
+  <span class="kt">bool</span> <span class="n">receiveSMS</span><span class="p">();</span>
+<span class="p">};</span>
+<span class="c1">// 다중 상속 선언</span>
+<span class="k">class</span> <span class="nc">MusicPhone</span> <span class="o">:</span> <span class="k">public</span> <span class="n">MP3</span><span class="p">,</span> <span class="k">public</span> <span class="n">MobilePhone</span> <span class="p">{</span> 
+<span class="nl">public:</span>
+  <span class="kt">void</span> <span class="n">dial</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="n">MusicPhone</span><span class="o">::</span><span class="n">dial</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">play</span><span class="p">();</span> <span class="c1">//MP3::play() 호출</span>
+  <span class="n">sendCall</span><span class="p">();</span> <span class="c1">//MobilePhone::sendCall() 호출</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">MusicPhone</span> <span class="n">hanPhone</span><span class="p">;</span>
+  <span class="n">hanPhone</span><span class="p">.</span><span class="n">play</span><span class="p">();</span> <span class="c1">//MP3의 멤버 play() 호출</span>
+  <span class="n">hanPhone</span><span class="p">.</span><span class="n">sendSMS</span><span class="p">();</span> <span class="c1">//MobilePhone의 멤버 sendSMS() 호출</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="학습-평가">학습 평가</h3>
+<p>C++ 상속의 개념을 배우고, 상속을 통해 간결한 클래스를 작성해보면서 객체 지향적 설계를 하기 위한 기반을 다졌다.
+상속을 사용해보니 클래스를 분류하고 관리하기 용이하여 클래스들의 구조적 관계 파악이 잘 될 것 같다고 생각했다.
+상속은 다중 상속이 가능한데, 여기서 다중 상속으로 인해 기본 클래스의 멤버와 파생 클래스의 멤버가 이중으로 객체에 삽입되는 문제점을 발견했다.
+이를 해결하는 방법은 가상 상속을 통해 기본 클래스 멤버의 중복 상속을 해결할 수 있다.</p>
+
+<h4 id="가상-상속-구현-방법">가상 상속 구현 방법</h4>
+<p>• 파생 클래스의 선언문에서 기본 클래스 앞에 virtual로 선언한다  <br />
+• 파생 클래스의 객체가 생성될 때 기본 클래스의 멤버는 오직 한 번만 생성</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">In</span> <span class="o">:</span> <span class="k">virtual</span> <span class="k">public</span> <span class="n">BaseIO</span> <span class="p">{</span>
+<span class="c1">//In 클래스는 BaseIO 클래스를 가상 상속함</span>
+<span class="p">...</span> 
+<span class="p">};</span>
+<span class="k">class</span> <span class="nc">Out</span> <span class="o">:</span> <span class="k">virtual</span> <span class="k">public</span> <span class="n">BaseIO</span> <span class="p">{</span>
+<span class="c1">// Out 클래스는 BaseIO 클래스를 가상 상속함</span>
+<span class="p">...</span> 
+<span class="p">};</span> 
+</code></pre></div></div>]]></content><author><name>GitHub User</name></author><category term="Week_06" /><summary type="html"><![CDATA[여섯 번째 활동 일지 일시 : 2022.11.16 16:00~18:30 작성자 : 콘텐츠IT전공 20215238 정다영 학습 목표 : 상속]]></summary></entry><entry><title type="html">5주차 활동일지_이화원</title><link href="/jekyll-theme-yat/week_05/2022/11/09/Week05-Hwawon.html" rel="alternate" type="text/html" title="5주차 활동일지_이화원" /><published>2022-11-09T00:00:00+00:00</published><updated>2022-11-09T00:00:00+00:00</updated><id>/jekyll-theme-yat/week_05/2022/11/09/Week05-Hwawon</id><content type="html" xml:base="/jekyll-theme-yat/week_05/2022/11/09/Week05-Hwawon.html"><![CDATA[<h2 id="다섯-번째-활동-일지">다섯 번째 활동 일지</h2>
+<p><strong>일시 :</strong> 2022.11.09 16:00~18:30<br />
+<strong>작성자 :</strong> 콘텐츠IT전공 20215772 이화원<br />
+<strong>학습 목표 :</strong> 프렌드와 연산자 중복
+<strong>주요학습내용</strong>
+-프랜드 함수
+-프랜드 선언
+-연산자 중복
+-연산자 함수</p>
+
+<p><strong>오늘의 학습 계획</strong></p>
+<ol>
+  <li>cpp_08_프렌드와연산자중복 pdf와 강의 영상을 보며 공부</li>
+  <li>12주차 실습 문제 코딩</li>
+  <li>학습 평가</li>
+</ol>
+
+<h3 id="요약-정리">요약 정리</h3>
+<p>프렌드 합수는 friend키워드로 클래스 내에 선언된 함수입니다. 프랜드 함수로 초대하는 3가지 유형으로는 전역함수, 다른 클래스의 특정 멤버함수, 다른클래스의 모든 맴버함수가 있습니다. 클래스의 멤버로 선언하기에는 무리가 있고 클래스의 모든 멤버를 자유롭게 접근 해야 할 경우에 프렌드 선언이 필요합니다.프랜드는 보통 class내부에 선언하고 싶은 클래스나 함수의 맨 앞에 friend를 넣어 선언합니다. c++언어는 연산자를 중복하는 것이 가능하고 연산자를 중복함으로서 프로그램의 가독성을 높입니다.연산자 중복으 C++에 본래 있는 연산자만 중복이 가능하고 피연산자 탕ㅇ입이 다른 새로운 연산을 정의 합니다. 연산자는 함수 형태로 구현하기도하변 반드시 클래스와 관계를 가집니다. 또한 피연산자의 개수는 바꿀 수 없고 연산의 우선 순위는 변경이 불가합니다. 보든 연산자가 중복이 불가하변 디폴트 매개 변수는 사용이 불가능합니다. 연산자 합수의 구현 방법은  클래스의 멤버 함수로 구현하는 방법과 외부 함수로 구현하고 클래스에 프렌드 함수로 선언하는 방법으로 총 2가지가 있습니다.</p>
+
+<h3 id="학습-평가">학습 평가</h3>
+<p>-새로 배운 내용중 기억해야 할 내용을 적었습니다.
+-프랜드 함수를 선언할 때
+	1.외부함수를 프렌드로 선언 예시
+	-class 클래스 이름{
+	   friend bool 외부함수(클래스 이름 r, 클래스 이름 s);
+	}
+	2.count 클래스의 sum함수를 클래스에 프랜드로 선언
+	-class 클래스 이름{
+	   friend bool count::sum(클래스 이름 r, 클래스 이름 s);
+	}/
+	3.count 클래스의 모든 멤버함수를 클래스에 프랜드 선언
+	-class 클래스 이름{
+	     friend count;
+	}
+-연산자 중복의 예시 (+연산자)
+	1.정수 더하기
+	-int a=2, b=3, c;
+	 c = a + b;//출력값 5
+	2.문자열 합치기
+	-string a=”C”, c;
+	 c = a + “++“;출력값 C++
+	3.색 섞기
+	-Color a(BLUE), b(RED), c;
+	 c = a + b;//출력값 VIOLET
+	4.배열 합치기
+	-SortedArray a(2,5,9), b(3,7,10), c;
+	 c = a + b; 
+-중복이  가능한 연산자
+	- +, -, *, /, %, ^, &amp;, |, ~, !, =, &lt;, &gt;, +=, -=, *=, /=, %=, ^_, &amp;=, |=, «, », »=, «=, ==, !=, &gt;=, &lt;=, &amp;&amp;, 	  ||, ++, –, -&gt;*, ., -&gt;, [], (), new, delete, new[], delete[]
+-중복이 불가능한 연산자
+	-., .*, ::(범위지정 연산자), ?:(3항 연산자)
+-연산자 함수의 형식
+	-리턴타입 operator 연산자(매개변수리스트);</p>]]></content><author><name>GitHub User</name></author><category term="Week_05" /><summary type="html"><![CDATA[다섯 번째 활동 일지 일시 : 2022.11.09 16:00~18:30 작성자 : 콘텐츠IT전공 20215772 이화원 학습 목표 : 프렌드와 연산자 중복 주요학습내용 -프랜드 함수 -프랜드 선언 -연산자 중복 -연산자 함수]]></summary></entry></feed>
