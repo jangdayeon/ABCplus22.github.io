@@ -2,11 +2,11 @@
 layout: post
 title: 2주차 활동일지_정다영
 subtitle:
-categories: Dayoung
+categories: Week_02
 tags: #Dayoung
 ---
 ## 두 번째 활동 일지
-**일시 :** 2022.10.19 16:00~18:00  
+**일시 :** 2022.10.19 16:00~18:30  
 **작성자 :** 콘텐츠IT전공 20215238 정다영   
 **학습 목표 :** 함수와참조  
 
