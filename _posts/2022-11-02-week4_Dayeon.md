@@ -47,10 +47,11 @@ tags: #Dayeon
  - 컨테이너에 객체를 삽입할 때 더 이상 포인터를 넣지 않아도 된다는 장점을 가진다.
 6. 이동 생성자(move constructor)
  - vp.push_back은 새로운 stack을 만들어 객체를 넣고, vp.emplace_back은 원래의 stack에서 추가하는 형식이다.
+
 ### 실습 문제 풀이
   <script src="https://gist.github.com/ABCplus22/fcf946f6d337801cda1833ed41fe7fe3.js"></script>
+
 ### 학습 평가
 교수님께 질문 드려봐야 할 것 :
  - 객체 대입은 연산자에 의해 이루어져야 한다고 했는데, 왜 Person rst = g();은 가능한지 궁금하다.
  - Person rst = g(); 일 땐 정보를 받아 저장 후 g()은 종료하므로 복사생성자 호출을 안한다고 하셨는데, 객체 대입 연산자 없이 Visual Stduio Code g++에서 실행시 소멸자가 한 번 밖에 실행을 하지 않는데, 그 이유가 아까 g()와 같은 경우가 아닌가?
- - 
